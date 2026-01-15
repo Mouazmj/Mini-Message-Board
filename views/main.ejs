@@ -6,6 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <% messages.forEach(message => { %>
+        <h4><%= 'From: ' + message.user  %></h4>
+        <h3><%= message.text %></h3>  
+        <p><%= message.added %></p>
+  <%  }) %>
 </body>
 </html>

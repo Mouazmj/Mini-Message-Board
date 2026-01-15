@@ -21,11 +21,11 @@ const messages = [
 ]
 
 app.get('/', (req, res) => {
-  res.render('main')
+  res.render('main', { messages: messages, title: 'Mini messageboard' })
 })
 
 app.get('/new', (req, res) => {
-    res.render('messages', { messages: messages, title: 'Mini messageboard' })
+    res.render('messages')
 })
 
 
