@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+const { title } = require('process')
 
 const app = express()
 
@@ -24,8 +25,10 @@ app.get('/', (req, res) => {
 })
 
 app.get('/new', (req, res) => {
-    res.render('messages')
+    res.render('messages', { messages: messages, title: 'Mini messageboard' })
 })
+
+
 
 const PORT = 3000
 
