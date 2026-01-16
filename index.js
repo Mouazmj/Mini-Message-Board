@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+const { text } = require('stream/consumers')
 
 
 const app = express()
@@ -27,6 +28,19 @@ app.get('/', (req, res) => {
 
 app.get('/new', (req, res) => {
     res.render('messages')
+})
+
+app.post('/action', (req, res) => {
+    const name = req.body.name
+    const message = req.body.message
+
+    messages.push({
+        text: message,
+        user: name,
+        added: new Date()
+    })
+
+    res.redirect('/')
 })
 
 
