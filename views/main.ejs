@@ -6,10 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <% messages.forEach(message => { %>
+    <a href="/new">Add new message</a>
+    <% messages.forEach((message, index) => { %>
         <h4><%= 'From: ' + message.user  %></h4>
         <h3><%= message.text %></h3>  
         <p><%= message.added %></p>
+        <a href="/message/<%= index %>">Open</a>
   <%  }) %>
 </body>
 </html>

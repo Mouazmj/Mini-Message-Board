@@ -30,6 +30,17 @@ app.get('/new', (req, res) => {
     res.render('messages')
 })
 
+app.get('/message/:id', (req, res) => {
+    const id = req.params.id
+    const message = messages[id]
+
+    if (!message) {
+        return res.send('Message not found')
+    }
+
+    res.render('messageDetail', { message })
+})
+
 app.post('/new', (req, res) => {
     const name = req.body.name
     const message = req.body.message
