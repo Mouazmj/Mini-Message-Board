@@ -30,7 +30,7 @@ app.get('/new', (req, res) => {
     res.render('messages')
 })
 
-app.post('/action', (req, res) => {
+app.post('/new', (req, res) => {
     const name = req.body.name
     const message = req.body.message
 
